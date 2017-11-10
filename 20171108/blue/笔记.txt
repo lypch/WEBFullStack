@@ -1,3 +1,8 @@
+WEB Pack基础
+https://doc.webpack-china.org/guides/getting-started/#-bundle-
+
+
+
 ES6：
 变量、箭头、参数、map、reduce、filter、forEach
 
