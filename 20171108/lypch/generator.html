@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script>
+            //generator函数的特点是在函数名称前面有一个星号*
+            function *show() {
+                alert("a");
+
+                yield;
+
+                alert("b");
+            }
+            //generator函数执行完成后，只会生成一个generator对象
+            let obj = show();
+            //必须通过generator对象的next执行，一直到yield暂停，一直到下一个next函数执行后继续。
+            obj.next();//打印a
+            obj.next();//打印b
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

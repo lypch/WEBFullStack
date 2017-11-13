@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script>
+            //generator函数的特点是在函数名称前面有一个星号*
+            function *show(a,b) {
+                alert("a");
+                console.log(a,b);//通过show函数的调用传入参考代码show(12,5)
+
+                let c = yield; // 中间结果通过yield返回,也可以通过yield获取到下一步的参数
+                //c = 888,是通过next函数传入的，看下面的obj.next(888)调用
+                console.log(c);
+
+                alert("b");
+
+                return 5; // 最后的结果是return
+            }
+            //generator函数执行完成后，只会生成一个generator对象
+            let obj = show(12,5);
+            //必须通过generator对象的next执行，一直到yield暂停，一直到下一个next函数执行后继续。
+            let res1 = obj.next();    //执行到yield暂停
+            console.log(res1);  //Next 会返回一个状态
+            let res2 = obj.next(888); //通过next传递下一个参数
+            console.log(res2);  //Next 返回状态
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script>
+            class User {
+                constructor(name,pass) {
+                    this.name = name;
+                    this.pass = pass;
+                }
+                //在类中定义函数不需要function关键字
+                login (){
+                    alert('login successfully');
+                }
+            }
+
+            class VIPUser extends User{
+                constructor(name,pass,level){
+                    //通过super函数调用父类的构造函数
+                    super(name,pass);
+                    this.level = level;
+                }
+
+                //在类中定义函数不需要function关键字
+                download(){
+                    alert("downloading");
+                }
+
+            }
+
+            let vip = new VIPUser('blue','123456',8);
+
+            alert(vip.name);        //
+            alert(vip.pass);        //
+            alert(vip.level);       //
+
+            vip.login();                    //子类可以调用父类的函数
+            vip.download();                 //子类可以调用子类的函数
+
+            alert(vip instanceof VIPUser);  //判断是不是VIPUser的实例   true
+            alert(vip instanceof User);     //判断是不是父类的实例      true  
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

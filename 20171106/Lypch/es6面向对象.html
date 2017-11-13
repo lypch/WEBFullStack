@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script>
+        /*
+            function User(name,pass) {
+                this.name = name;
+                this.pass = pass;
+            }
+
+            User.prototype.login = function () {
+                alert('longin successfully.');
+            };
+        */
+            class User {
+                constructor(name,pass) {
+                    this.name = name;
+                    this.pass = pass;
+                }
+
+                login (){
+                    alert('login successfully');
+                }
+            }
+
+            let u = new User("123","456");
+
+            u.login();
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

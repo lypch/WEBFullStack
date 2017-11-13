@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <script src="jquery.js" charset="utf-8"></script>
+        <script>
+            async function show(){
+                alert("欢迎哈");
+
+                let arr=await $.ajax({url:'data/1.txt' , dataType:'json'});
+
+                alert("收到数组"+arr);
+
+                let json=await $.ajax({url:'data/2.txt' , dataType:'json'});
+
+                alert("json读到了");
+
+                console.log(json);
+            }
+
+            show();
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
