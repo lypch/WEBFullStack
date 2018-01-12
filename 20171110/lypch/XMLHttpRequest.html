@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+    </head>
+    <script type="text/javascript">
+        window.onload= function(){
+            var oBtn = document.getElementById('btn1');
+
+            //1.创建一个对象
+            let xhr = new XMLHttpRequest();
+
+            //2.链接
+            xhr.open('GET','data/1.txt',true);
+
+            //3.发送请求
+            xhr.send();
+
+            //4.接受
+            xhr.onreadystatechange=function(){
+                if (xhr.readyState == 4)
+                {
+                    if ( xhr.status >= 200 && xhr.status < 300 || xhr.status == 304)
+                    {
+                        console.log(xhr);
+                        alert("成功");
+                    }
+                    else
+                    {
+                        alert("失败");
+                    };
+                }
+            };
+
+        };
+    </script>
+    <body>
+        <input type="button" id="btn1" value="Button">
+    </body>
+</html>
